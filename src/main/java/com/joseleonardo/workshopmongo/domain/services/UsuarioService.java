@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
-import com.joseleonardo.workshopmongo.api.dto.UsuarioDTO;
+import com.joseleonardo.workshopmongo.domain.dto.UsuarioDTO;
 import com.joseleonardo.workshopmongo.domain.entities.Usuario;
 import com.joseleonardo.workshopmongo.domain.repositories.UsuarioRepository;
 import com.joseleonardo.workshopmongo.domain.services.exceptions.BancoDeDadosException;

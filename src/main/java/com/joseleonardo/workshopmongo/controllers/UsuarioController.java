@@ -1,4 +1,4 @@
-package com.joseleonardo.workshopmongo.api.controllers;
+package com.joseleonardo.workshopmongo.controllers;
 
 import java.net.URI;
 import java.util.List;
@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.joseleonardo.workshopmongo.api.dto.UsuarioDTO;
+import com.joseleonardo.workshopmongo.domain.dto.UsuarioDTO;
 import com.joseleonardo.workshopmongo.domain.entities.Postagem;
 import com.joseleonardo.workshopmongo.domain.entities.Usuario;
 import com.joseleonardo.workshopmongo.domain.services.UsuarioService;

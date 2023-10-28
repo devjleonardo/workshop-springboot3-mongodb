@@ -9,8 +9,8 @@ import java.util.Objects;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import com.joseleonardo.workshopmongo.api.dto.AutorDTO;
-import com.joseleonardo.workshopmongo.api.dto.ComentarioDTO;
+import com.joseleonardo.workshopmongo.domain.dto.AutorDTO;
+import com.joseleonardo.workshopmongo.domain.dto.ComentarioDTO;
 
 @Document
 public class Postagem implements Serializable {

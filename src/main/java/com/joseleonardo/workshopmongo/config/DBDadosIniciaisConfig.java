@@ -8,8 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 
-import com.joseleonardo.workshopmongo.api.dto.AutorDTO;
-import com.joseleonardo.workshopmongo.api.dto.ComentarioDTO;
+import com.joseleonardo.workshopmongo.domain.dto.AutorDTO;
+import com.joseleonardo.workshopmongo.domain.dto.ComentarioDTO;
 import com.joseleonardo.workshopmongo.domain.entities.Postagem;
 import com.joseleonardo.workshopmongo.domain.entities.Usuario;
 import com.joseleonardo.workshopmongo.domain.repositories.PostagemRepository;

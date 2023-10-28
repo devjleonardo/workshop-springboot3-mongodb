@@ -1,22 +1,24 @@
-package com.joseleonardo.workshopmongo.api.dto;
+package com.joseleonardo.workshopmongo.domain.dto;
 
 import java.io.Serializable;
 
 import com.joseleonardo.workshopmongo.domain.entities.Usuario;
 
-public class AutorDTO implements Serializable {
+public class UsuarioDTO implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
 	private String id;
 	private String nome;
+	private String email;
 
-	public AutorDTO() {
+	public UsuarioDTO() {
 	}
 
-	public AutorDTO(Usuario usuario) {
+	public UsuarioDTO(Usuario usuario) {
 		id = usuario.getId();
 		nome = usuario.getNome();
+		email = usuario.getEmail();
 	}
 
 	public String getId() {
@@ -33,6 +35,14 @@ public class AutorDTO implements Serializable {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 }

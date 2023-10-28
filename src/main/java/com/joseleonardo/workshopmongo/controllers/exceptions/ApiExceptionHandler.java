@@ -1,4 +1,4 @@
-package com.joseleonardo.workshopmongo.api.exceptions;
+package com.joseleonardo.workshopmongo.controllers.exceptions;
 
 import java.time.Instant;
 

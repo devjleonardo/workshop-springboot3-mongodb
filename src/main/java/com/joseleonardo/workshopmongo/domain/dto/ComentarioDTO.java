@@ -1,4 +1,4 @@
-package com.joseleonardo.workshopmongo.api.dto;
+package com.joseleonardo.workshopmongo.domain.dto;
 
 import java.io.Serializable;
 import java.util.Date;
