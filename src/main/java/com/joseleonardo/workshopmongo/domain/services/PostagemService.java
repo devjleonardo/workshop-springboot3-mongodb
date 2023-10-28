@@ -1,5 +1,6 @@
 package com.joseleonardo.workshopmongo.domain.services;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -23,7 +24,13 @@ public class PostagemService {
 	}
 	
 	public List<Postagem> buscarPorTitulo(String titulo) {
-		return postagemRepository.pesquisarPorTitulo(titulo);
+		return postagemRepository.buscarPorTitulo(titulo);
+	}
+	
+	public List<Postagem> pesquisaCompleta(String texto, Date dataMinima, Date dataMaxima) {
+		dataMaxima = new Date(dataMaxima.getTime() + 24 * 60 * 60 * 1000);
+		
+		return postagemRepository.pesquisaCompleta(texto, dataMinima, dataMaxima);
 	}
 	
 }
