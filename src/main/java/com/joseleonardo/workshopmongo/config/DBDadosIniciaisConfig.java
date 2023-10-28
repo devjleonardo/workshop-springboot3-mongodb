@@ -28,7 +28,6 @@ public class DBDadosIniciaisConfig implements CommandLineRunner {
 		SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
 		format.setTimeZone(TimeZone.getTimeZone("GMT"));
 		
-		
 		usuarioRepository.deleteAll();
 		postagemRepository.deleteAll();
 		
@@ -44,6 +43,11 @@ public class DBDadosIniciaisConfig implements CommandLineRunner {
 				"Bom dia", "Acordei feliz hoje!", new AutorDTO(maria));
 		
 		postagemRepository.saveAll(Arrays.asList(postagem1, postagem2));
+		
+		maria.adicionarPostagem(postagem1);
+		maria.adicionarPostagem(postagem2);
+		
+		usuarioRepository.save(maria);
 	}
 
 }
