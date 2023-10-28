@@ -1,13 +1,16 @@
 package com.joseleonardo.workshopmongo.domain.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.joseleonardo.workshopmongo.api.dto.AutorDTO;
+import com.joseleonardo.workshopmongo.api.dto.ComentarioDTO;
 
 @Document
 public class Postagem implements Serializable {
@@ -20,6 +23,8 @@ public class Postagem implements Serializable {
 	private String titulo;
 	private String corpo;
 	private AutorDTO autor;
+	
+	List<ComentarioDTO> comentarios = new ArrayList<>();
 
 	public Postagem() {
 	}
@@ -70,6 +75,14 @@ public class Postagem implements Serializable {
 	
 	public void setAutor(AutorDTO autor) {
 		this.autor = autor;
+	}
+	
+	public List<ComentarioDTO> getComentarios() {
+		return comentarios;
+	}
+	
+	public boolean adicionarComentario(ComentarioDTO comentario) {
+		return getComentarios().add(comentario);
 	}
 
 	@Override
