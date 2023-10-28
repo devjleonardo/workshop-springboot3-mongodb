@@ -47,6 +47,19 @@ public class UsuarioService {
 		}
 	}
 	
+	public Usuario atualizar(Usuario usuarioAtualizado) {
+		Usuario usuarioAtual = buscarPorId(usuarioAtualizado.getId());
+			
+		atualizarDados(usuarioAtual, usuarioAtualizado);
+			
+		return usuarioRepository.save(usuarioAtualizado);
+	}
+	
+	private void atualizarDados(Usuario usuarioAtual, Usuario usuarioAtualizado) {
+		usuarioAtual.setNome(usuarioAtualizado.getNome());
+		usuarioAtual.setEmail(usuarioAtualizado.getEmail());
+	}
+
 	public Usuario converterParaDTO(UsuarioDTO usuarioDTO) {
 		return new Usuario(usuarioDTO.getId(), usuarioDTO.getNome(), usuarioDTO.getEmail());
 	}
