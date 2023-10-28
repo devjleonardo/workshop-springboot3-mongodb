@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.joseleonardo.workshopmongo.api.dto.UsuarioDTO;
+import com.joseleonardo.workshopmongo.domain.entities.Postagem;
 import com.joseleonardo.workshopmongo.domain.entities.Usuario;
 import com.joseleonardo.workshopmongo.domain.services.UsuarioService;
 
@@ -72,6 +73,13 @@ public class UsuarioController {
 		usuario = usuarioService.atualizar(usuario);
 		
 		return ResponseEntity.noContent().build();
+	}
+	
+	@GetMapping(value = "/{id}/postagens")
+	public ResponseEntity<List<Postagem>> buscarPostagens(@PathVariable String id) {
+		Usuario usuario = usuarioService.buscarPorId(id);
+		
+		return ResponseEntity.ok().body(usuario.getPostagens());
 	}
 	
 }
