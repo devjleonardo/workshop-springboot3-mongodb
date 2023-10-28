@@ -7,6 +7,8 @@ import java.util.Objects;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import com.joseleonardo.workshopmongo.api.dto.AutorDTO;
+
 @Document
 public class Postagem implements Serializable {
 
@@ -17,12 +19,12 @@ public class Postagem implements Serializable {
 	private Date data;
 	private String titulo;
 	private String corpo;
-	private Usuario autor;
+	private AutorDTO autor;
 
 	public Postagem() {
 	}
 
-	public Postagem(String id, Date data, String titulo, String corpo, Usuario autor) {
+	public Postagem(String id, Date data, String titulo, String corpo, AutorDTO autor) {
 		this.id = id;
 		this.data = data;
 		this.titulo = titulo;
@@ -62,11 +64,11 @@ public class Postagem implements Serializable {
 		this.corpo = corpo;
 	}
 	
-	public Usuario getAutor() {
+	public AutorDTO getAutor() {
 		return autor;
 	}
 	
-	public void setAutor(Usuario autor) {
+	public void setAutor(AutorDTO autor) {
 		this.autor = autor;
 	}
 

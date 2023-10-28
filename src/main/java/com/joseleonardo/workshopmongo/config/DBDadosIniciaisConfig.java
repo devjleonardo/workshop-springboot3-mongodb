@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 
+import com.joseleonardo.workshopmongo.api.dto.AutorDTO;
 import com.joseleonardo.workshopmongo.domain.entities.Postagem;
 import com.joseleonardo.workshopmongo.domain.entities.Usuario;
 import com.joseleonardo.workshopmongo.domain.repositories.PostagemRepository;
@@ -35,12 +36,13 @@ public class DBDadosIniciaisConfig implements CommandLineRunner {
 		Usuario alex = new Usuario(null, "Alex Green", "alex@gmail.com");
 		Usuario bob = new Usuario(null, "Bob Grey", "bob@gmail.com");
 		
-		Postagem postagem1 = new Postagem(null, format.parse("21/03/2018"), 
-				"Partiu viagem", "Vou viaja para São Paulo. Abraços!", maria);
-		Postagem postagem2 = new Postagem(null, format.parse("21/03/2018"), 
-				"Bom dia", "Acordei feliz hoje!", maria);
-		
 		usuarioRepository.saveAll(Arrays.asList(maria, alex, bob));
+		
+		Postagem postagem1 = new Postagem(null, format.parse("21/03/2018"), 
+				"Partiu viagem", "Vou viaja para São Paulo. Abraços!", new AutorDTO(maria));
+		Postagem postagem2 = new Postagem(null, format.parse("21/03/2018"), 
+				"Bom dia", "Acordei feliz hoje!", new AutorDTO(maria));
+		
 		postagemRepository.saveAll(Arrays.asList(postagem1, postagem2));
 	}
 
